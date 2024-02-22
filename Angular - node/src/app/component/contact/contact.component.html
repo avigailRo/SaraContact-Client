@@ -1,0 +1,160 @@
+<!-- הוספת איש קשר -->
+<div class="container">
+    <div class="button-container">
+        <p-button class="custom-button" (click)="showDialog('addContact')" icon="pi pi-external-link" label="הוספת איש קשר "></p-button>
+        <p-dialog header="הוספת איש קשר חדש" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false" *ngIf="visible && formType === 'addContact'">
+    <form (ngSubmit)="onSubmit()">
+    <div class="centered" action="">
+    <div class="input-row">
+        <span class="p-float-label">
+            <input pInputText id="name" name="name" [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}"/>
+            <label htmlFor="name">Name</label>
+        </span>
+    <br>
+        <span class="p-float-label">
+            <input pInputText id="lastname" name="lname" [(ngModel)]="user.lname" [ngModelOptions]="{standalone: true}"/>
+            <label htmlFor="lastname">Last Name</label>
+        </span>
+    <br>
+    </div>
+    <div class="input-row">
+        <span class="p-float-label">
+            <input pInputText id="email" name="email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"/>
+            <label htmlFor="email">Email</label>
+        </span>
+    <br>
+        <span class="p-float-label">
+            <input pInputText id="phone" name="phone" [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"/>
+            <label htmlFor="phone">Phone</label>
+        </span>
+    <br>
+    </div>
+    <br>
+        <label class="lab">Address:</label>
+    <br>
+    <div class="input-row">
+            <p-dropdown [options]="countrys" [(ngModel)]="selectedCountry" [ngModelOptions]="{standalone: true}" optionLabel="name" [showClear]="true" placeholder="Select a Country"></p-dropdown>
+        <span class="p-float-label">
+            <input pInputText id="city" name="city" #ct/>
+            <label htmlFor="city">City</label>
+        </span>
+    <br>
+    </div>
+    <div class="input-row">
+        <span class="p-float-label">
+            <input pInputText id="street" name="street" #st />
+            <label htmlFor="street">Street</label>
+        </span>
+    <br>
+        <span class="p-float-label">
+            <input pInputText id="homeNumber" name="homeNumber" #nu/>
+            <label htmlFor="homeNumber">Home Number</label>
+        </span>
+    <br>
+    </div>
+    <div>
+        <label for="language">Language:</label>
+        <p-dropdown [options]="language"  [(ngModel)]="selectedLang" [ngModelOptions]="{standalone: true}" optionLabel="languageName" [showClear]="true" placeholder="Select a City"></p-dropdown>              
+    </div>
+    <div>
+        <label for="group">Group:</label>
+        <p-dropdown [options]="groups"  [(ngModel)]="selectedGroup" [ngModelOptions]="{standalone: true}" optionLabel="groupName" [showClear]="true" placeholder="Select a City"></p-dropdown>
+    </div>
+    <br/>
+    <div class="input-row">
+        <span class="p-float-label">
+            <textarea id="prayerNames" rows="5" cols="30" pInputTextarea [(ngModel)]="user.prayerNames" [ngModelOptions]="{standalone: true}"></textarea>
+            <label for="prayerNames">שמות לתפילה:</label>
+        </span>
+        <span class="p-float-label">
+            <textarea id="notes" rows="5" cols="30" pInputTextarea [(ngModel)]="user.note" [ngModelOptions]="{standalone: true}"></textarea>
+            <label for="notes">הערות</label>
+        </span>
+    </div>
+    </div>    
+    </form>          
+        <ng-template pTemplate="footer">
+            <p-button type="submit" icon="pi pi-check" (click)="onClick(ct.value,st.value,nu.value)" label="הוספה" styleClass="p-button-text"></p-button>
+        </ng-template>
+        </p-dialog>
+    </div>
+    
+    <!-- הצגת איש קשר -->
+    <div>
+    <div>
+    <div>
+    <div class="button-container">
+        <p-button (click)="ViewContacts()">הצגת אנשי קשר</p-button>
+    </div>
+    <div *ngIf="ViewC" class="ViewC"><br>
+        <p-accordion [multiple]="false">
+        <p-accordionTab *ngFor="let p of contactsList; let i = index" (onBeforeOpen)="accordionTabOpen(i)" class="w-full">
+        <ng-template pTemplate="header">
+    <div>
+        <i class="pi pi-user mr-2"></i>
+        <span class="vertical-align-middle">{{p.name}}</span>
+        <span class="vertical-align-middle">{{p.lname}}</span>
+    </div>
+        </ng-template>
+        <ng-template pTemplate="content">
+            <p class="m-0">
+                <label>שם פרטי :</label>
+                <label>{{p.name}}</label><br><br>
+                <label>משפחה :</label>
+                <label>{{p.lname}}</label><br><br>
+                <label>מייל :</label> 
+                <label>{{p.email}}</label><br><br>
+                <label>טלפון :</label>
+                <label>{{p.phone}}</label><br><br>
+                <label>כתובת :</label>
+                <label>{{p.address}}</label><br><br>
+                <label>קבוצה :</label>
+                <label>{{p.group}}</label><br><br>
+                <label>תאריך שיחה אחרון :</label>
+                <label>{{p.lastCall}}</label><br><br>
+            </p>
+        </ng-template>
+    </p-accordionTab>
+    </p-accordion>
+    </div>   
+    </div> 
+    </div>
+    </div>
+</div>
+<!-- ....................................................................................................... -->
+                <!-- 
+                    <span class="p-float-label">
+                        <input pInputText id="address" name="address" [(ngModel)]="user.address" />
+                        <label htmlFor="address">City</label>
+                    </span>
+                    <br>
+                    <span class="p-float-label">
+                        <input pInputText id="address" name="address" [(ngModel)]="user.address" />
+                        <label htmlFor="address">Street</label>
+                    </span>
+                    <br>
+                    </div>
+                    <span class="p-float-label">
+                        <input pInputText id="address" name="address" [(ngModel)]="user.address" />
+                        <label htmlFor="address">Home Number</label>
+                    </span>
+                    <br> -->
+                        <!-- <input pInputText id="language" name="language" [(ngModel)]="user.language" />
+                        <label htmlFor="language">Language</label> -->
+                        <!-- <p-checkbox id="language1" label="Hebrew" name="language" value="hebrew"></p-checkbox>
+                                            
+                        <p-checkbox id="language2" label="English" name="language" value="english"></p-checkbox>
+
+                        <p-checkbox id="language3" label="Yiddish" name="language" value="yiddish"></p-checkbox> -->
+                        <!-- <p-checkbox id="belongTo" label="ליטאים" name="belongTo" value="lit"></p-checkbox>
+                                            
+                        <p-checkbox id="belongTo" label="חסידים" name="belongTo" value="chasid"></p-checkbox>
+
+                        <p-checkbox id="belongTo" label="ספרדים" name="belongTo" value="sfarad"></p-checkbox> -->
+                        <!-- <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
+                        <label for="float-input">שמות לתפילה:</label> -->
+
+                        <!-- <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
+                        <label for="float-input">הערות</label> -->
+
+

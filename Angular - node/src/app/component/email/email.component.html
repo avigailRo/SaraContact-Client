@@ -1,0 +1,59 @@
+
+  <!--  -->
+  <!-- <div class="button-container">
+    <p-button class="custom-button" (click)="visible = true" icon="pi pi-external-link" label="לשליחת מייל"></p-button>
+    <p-dialog header="לשליחת מייל" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }">
+      <form (ngSubmit)="onSendMail()">
+        <div class="centered" action="">
+            <span class="p-float-label">
+                <input pInputText id="recipient" [(ngModel)]="user.email" />
+                <label htmlFor="recipient">נמען</label>
+              </span>
+              <br>
+              <span class="p-float-label">
+                <input pInputText id="sender" [(ngModel)]="user.senderEmail" />
+                <label htmlFor="sender">מוען</label>
+              </span>
+              <br>
+              <span class="p-float-label">
+                <input pInputText id="subject" [(ngModel)]="user.subject" />
+                <label htmlFor="subject">נושא</label>
+              </span>
+              <br>
+              <span class="p-float-label">
+                <textarea pInputTextarea id="message" [(ngModel)]="user.message"></textarea>
+                <label htmlFor="message">תוכן</label>
+              </span>
+        </div>
+        <ng-template pTemplate="footer">
+          <p-button icon="pi pi-check" type="submit" label="שלח מייל" styleClass="p-button-text"></p-button>
+        </ng-template>
+      </form>
+    </p-dialog>
+  </div>
+   -->
+  
+<!--  -->
+<div class="email-form">
+    <h2>שליחת מייל</h2>
+    <form (ngSubmit)="onSubmit()" #emailForm="ngForm">
+      <div class="form-group">
+        <label for="recipient">נמען:</label>
+        <input type="email" class="form-control" id="recipient" name="recipient" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="sender">מוען:</label>
+        <input type="email" class="form-control" id="sender" name="sender" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="subject">נושא:</label>
+        <input type="text" class="form-control" id="subject" name="subject" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="message">תוכן:</label>
+        <textarea class="form-control" id="message" name="message" ngModel required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!emailForm.valid">שלח מייל</button>
+    </form>
+  </div>
+  

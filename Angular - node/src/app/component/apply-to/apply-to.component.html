@@ -1,0 +1,200 @@
+<!-- הוספת איש קשר -->
+<div class="button-container">
+ <p-button class="custom-button" (click)="showDialog('addContact')" icon="pi pi-external-link" label="הוספת איש קשר "></p-button>
+  <p-dialog header="הוספת איש קשר חדש" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }"
+        [draggable]="false" [resizable]="false" *ngIf="visible && formType === 'addContact'">
+
+
+        <div class="centered" action="">
+            <span class="p-float-label">
+                <input pInputText id="name" [(ngModel)]="user.name" />
+                <label htmlFor="name">Name</label>
+            </span>
+            <br>
+            <span class="p-float-label">
+                <input pInputText id="lastname" [(ngModel)]="user.lname" />
+                <label htmlFor="lastname">Last Name</label>
+            </span>
+            <br>
+            <!-- <span class="p-float-label">
+                <input pInputText id="phone" [(ngModel)]="user.Phone" />
+                <label htmlFor="phone">Phone</label>
+            </span> -->
+            <br>
+            <span class="p-float-label">
+                <input pInputText id="email" [(ngModel)]="user.email" />
+                <label htmlFor="email">Email</label>
+            </span>
+            <br>
+            <span class="p-float-label">
+                <input pInputText id="address" [(ngModel)]="user.address" />
+                <label htmlFor="address">Address</label>
+            </span>
+            <br>
+            <span class="p-float-label">
+
+            </span>
+            <br>
+            <!-- <span class="p-float-label">
+                <input pInputText id="birthdate" [(ngModel)]="user.BirthDate" />
+                <label htmlFor="birthdate">BirthDate</label>
+            </span> -->
+            <br>
+
+        </div>
+
+        <ng-template pTemplate="footer">
+            <p-button icon="pi pi-check" (click)="visible = false" label="הוספה" styleClass="p-button-text"></p-button>
+        </ng-template>
+    </p-dialog>
+</div>
+<br>
+
+<!-- רישום לחוג -->
+<div class="button-container">
+    <p-button class="custom-button" (click)="showComponent('registerToCourse')" icon="pi pi-external-link" label="רישום לחוג"></p-button>
+    <app-course *ngIf="visible"></app-course>
+    <!-- <p-button class="custom-button" (click)="showDialog('registerToCourse')" icon="pi pi-external-link" label="רישום לחוג"></p-button> -->
+     <!-- <p-dialog header="רישום לחוג" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }"
+           [draggable]="false" [resizable]="false" *ngIf="visible && formType === 'registerToCourse'">
+   
+   
+           <div class="centered" action="">
+               <span class="p-float-label">
+                   <input pInputText id="name" [(ngModel)]="user.Fname" />
+                   <label htmlFor="name">Name</label>
+               </span>
+               <br>
+               <span class="p-float-label">
+                   <input pInputText id="lastname" [(ngModel)]="user.Lname" />
+                   <label htmlFor="lastname">Last Name</label>
+               </span>
+               <br>
+               <span class="p-float-label">
+                   <input pInputText id="phone" [(ngModel)]="user.Phone" />
+                   <label htmlFor="phone">Phone</label>
+               </span>
+               <br>
+               <span class="p-float-label">
+                   <input pInputText id="address" [(ngModel)]="user.Address" />
+                   <label htmlFor="address">Address</label>
+               </span>
+               <br>
+               <span class="p-float-label">
+                   <input pInputText id="birthdate" [(ngModel)]="user.BirthDate" />
+                   <label htmlFor="birthdate">BirthDate</label>
+               </span>
+               <br>
+            <br>
+           </div>
+   
+           <ng-template pTemplate="footer">
+               <p-button icon="pi pi-check" (click)="visible = false" label="הוספה" styleClass="p-button-text"></p-button>
+           </ng-template>
+       </p-dialog> -->
+   </div>
+   <br>
+
+   <!-- כלה -->
+   <div class="button-container">
+    <p-button class="custom-button" (click)="showDialog('addCala')" icon="pi pi-external-link" label="כלה"></p-button>
+     <p-dialog header="כלה" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }"
+           [draggable]="false" [resizable]="false" *ngIf="visible && formType === 'addCala'">
+   
+   
+           <div class="centered" action="">
+               <span class="p-float-label">
+                   <input pInputText id="name" [(ngModel)]="user.name" />
+                   <label htmlFor="name">Name</label>
+               </span>
+               <br>
+               <span class="p-float-label">
+                   <input pInputText id="lastname" [(ngModel)]="user.lname" />
+                   <label htmlFor="lastname">Last Name</label>
+               </span>
+               <br>
+               <!-- <span class="p-float-label">
+                   <input pInputText id="phone" [(ngModel)]="user.Phone" />
+                   <label htmlFor="phone">Phone</label>
+               </span> -->
+               <br>
+               <span class="p-float-label">
+                   <input pInputText id="email" [(ngModel)]="user.email" />
+                   <label htmlFor="email">Email</label>
+               </span>
+               <br>
+               <span class="p-float-label">
+                   <input pInputText id="address" [(ngModel)]="user.address" />
+                   <label htmlFor="address">Address</label>
+               </span>
+               <br>
+               <span class="p-float-label">
+   
+               </span>
+               <br>
+               <!-- <span class="p-float-label">
+                   <input pInputText id="birthdate" [(ngModel)]="user.BirthDate" />
+                   <label htmlFor="birthdate">BirthDate</label>
+               </span> -->
+               <br>
+   
+           </div>
+   
+           <ng-template pTemplate="footer">
+               <p-button icon="pi pi-check" (click)="visible = false" label="הוספה" styleClass="p-button-text"></p-button>
+           </ng-template>
+       </p-dialog>
+   </div>
+   <br>
+
+   <!-- חתן -->
+   <div class="button-container">
+    <p-button class="custom-button" (click)="showDialog('addChatan')" icon="pi pi-external-link" label="חתן"></p-button>
+     <p-dialog header="חתן" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }"
+           [draggable]="false" [resizable]="false" *ngIf="visible && formType === 'addChatan'">
+   
+   
+           <div class="centered" action="">
+               <span class="p-float-label">
+                   <input pInputText id="name" [(ngModel)]="user.name" />
+                   <label htmlFor="name">Name</label>
+               </span>
+               <br>
+               <span class="p-float-label">
+                   <input pInputText id="lastname" [(ngModel)]="user.lname" />
+                   <label htmlFor="lastname">Last Name</label>
+               </span>
+               <br>
+               <!-- <span class="p-float-label">
+                   <input pInputText id="phone" [(ngModel)]="user.Phone" />
+                   <label htmlFor="phone">Phone</label>
+               </span> -->
+               <br>
+               <span class="p-float-label">
+                   <input pInputText id="email" [(ngModel)]="user.email" />
+                   <label htmlFor="email">Email</label>
+               </span>
+               <br>
+               <span class="p-float-label">
+                   <input pInputText id="address" [(ngModel)]="user.address" />
+                   <label htmlFor="address">Address</label>
+               </span>
+               <br>
+               <span class="p-float-label">
+   
+               </span>
+               <br>
+               <!-- <span class="p-float-label">
+                   <input pInputText id="birthdate" [(ngModel)]="user.BirthDate" />
+                   <label htmlFor="birthdate">BirthDate</label>
+               </span> -->
+               <br>
+   
+           </div>
+   
+           <ng-template pTemplate="footer">
+               <p-button icon="pi pi-check" (click)="visible = false" label="הוספה" styleClass="p-button-text"></p-button>
+           </ng-template>
+       </p-dialog>
+   </div>
+   <br>

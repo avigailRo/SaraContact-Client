@@ -1,0 +1,28 @@
+.button-row {
+    display: flex;
+    gap: 10px; /* זה מוסיף רווח בין הכפתורים */
+  }
+  
+  .router-outlet{
+    text-decoration:none;
+    border: none; /* מוסיף גבולות לכפתור */
+    cursor: pointer; /*הפרמטר הזה משנה את העכבר לסמל היד */
+    border-radius: 10px; /* הוסף קצוות עגולים*/
+    font-size: 24px; /* שינוי גודל הטקסט */
+    margin: auto;
+    font-weight: 100;
+      
+    
+  } 
+  .router-outlet:hover{
+    color:black;
+    font-weight: 400;
+  }
+
+  .active {
+    font-weight: bold; /* הוספת משקל לטקסט */
+    color:black; /* שינוי צבע הטקסט לאדום */
+    /* אפשר להוסיף כל עיצוב אחר שתרצה להחליט כאשר העמוד נמצא במצב זה */
+  }
+
+ 

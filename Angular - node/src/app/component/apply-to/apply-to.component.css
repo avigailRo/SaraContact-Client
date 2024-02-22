@@ -1,0 +1,15 @@
+/* סגנון כללי לכפתורים */
+.custom-button {
+    border-radius: 20px; /* עיגול פינות */
+    margin: 10px; /* רווחים בין הכפתורים */
+  }
+  
+  /* צבע רקע נוסף לכל כפתור */
+  .custom-button:nth-child(odd) {
+    background-color: lightblue; /* צבע רקע עבור כפתורים אי-זוגיים */
+  }
+  
+  .custom-button:nth-child(even) {
+    background-color: lightgreen; /* צבע רקע עבור כפתורים זוגיים */
+  }
+  

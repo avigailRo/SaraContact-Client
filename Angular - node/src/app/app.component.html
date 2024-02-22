@@ -1,0 +1,21 @@
+<!-- <a routerLink="/">עבור לדף הבית</a> -->
+
+<!-- <app-search-button></app-search-button> -->
+<div class="button-row">
+<!-- במקום 'currentPage' השתמש ב- 'currentpage' באות קטנה -->
+<a routerLink="/home" class="router-outlet" [class.active]="currentpage === 'home'" (click)="currentPage('home')">Home</a>
+<a routerLink="/donations" class="router-outlet" [class.active]="currentpage === 'donations'" (click)="currentPage('donations')">Donations</a>
+<a routerLink="/contact"  class="router-outlet" [class.active]="currentpage === 'contact'" (click)="currentPage('contact')">Contacts</a>
+<a routerLink="/calendar"  class="router-outlet" [class.active]="currentpage === 'calendar'" (click)="currentPage('calendar')">Calendar</a>
+<a routerLink="/events"  class="router-outlet" [class.active]="currentpage === 'events'" (click)="currentPage('events')">Event</a>
+<a routerLink="/apply" class="router-outlet" [class.active]="currentpage === 'apply'" (click)="currentPage('apply')">ApplyTo</a>
+<a routerLink="/email"  class="router-outlet" [class.active]="currentpage === 'email'" (click)="currentPage('email')">Email</a>
+<!-- *ngIf="status" -->
+    <!-- <button routerLink="/smart-search">חיפוש חכם</button> -->
+    <p-button styleClass="p-button p-button-rounded mr-2" icon="pi pi-search" (click)="search()" ></p-button>
+    <input *ngIf="searchBarVisible" placeholder="fbvhi"/>
+</div>
+
+
+
+<router-outlet> </router-outlet>

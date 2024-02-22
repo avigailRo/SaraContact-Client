@@ -1,0 +1,70 @@
+
+span{
+    margin-right: 10px; 
+ }
+ .ViewC{
+     direction: rtl;
+ }
+
+/* .cont{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+} */
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* .container {
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+    align-items: center; 
+}
+  
+  .button-container {
+    margin-right: 10px; 
+    justify-content: center;
+    align-items: center;
+  } */
+  .container {
+    display: flex;
+    justify-content: space-between; /* רווח ישיבה שווה בין האלמנטים */
+    align-items: flex-start; /* התאמה של כולם למעלה */
+    height: 50px; /* קביעת גובה קבוע לקונטיינר */
+    margin-top: 40px;
+  }
+  
+  .button-container {
+    flex: 1; /* התאמה של האלמנטים למרחק שווה */
+    margin: 0 5px; /* רווח בין ה־divs */
+  }
+
+
+p-button {
+    margin: 0 10px; /* הורז את הרווח בין הכפתורים */
+    white-space: nowrap; /* מונע מהכפתורים לשבור לשורה חדשה */
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; /* רווח בין השורות */
+  }
+  
+  .input-row span {
+    flex: 1;
+    margin-right: 10px; /* רווח בין התיבות */
+  }
+
+  .lab {
+    display: block;
+    width: fit-content; /* התאמה של רוחב התווית לתוכן */
+    margin-right: 500px; /* רווח מימין להזזת הטקסט שמאלה */
+    font-weight: bold; /* הדגשת הכתב */
+  }
+  /* form
+  {
+    direction: rtl;
+  } */

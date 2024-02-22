@@ -1,0 +1,68 @@
+
+.centered-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* כדי להגדיר את גובה התווית */
+}
+
+.green-text {
+  font-size: 24px; /* גודל הגופן */
+  font-weight: bold; /* משקל הגופן */
+  color: green; /* צבע הטקסט */
+}
+
+.centered-image {
+  display: block; /* עשויה להיות נדרשת אם התמונה מוגדרת כקטע בנוף */
+  margin: 0 auto; /* מיושבת לאמצע באופן אופקי */
+  max-width: 600px; /* נמנע הגדלת התמונה מעבר לרוחב המקורי */
+  height: 500px; /* מסדרת את גובה התמונה כך שיתאים לרוחב שהוא */
+  margin-left: 0 auto; /* צמצום המרווח משמאל של התמונה */
+}
+
+.container {
+  text-align: center;
+}
+
+.A {
+  display: block;
+  font-family: Arial, sans-serif;/*  הגופן שאתה מעוניין בו */
+/*  font-weight: bold;  להכביר את הטקסט */
+}
+.flex-container {
+  display: flex;
+  align-items: center; /* למרכז על ציר Y */
+}
+.router-outlet{
+  text-decoration:none;
+  border: none; /* מוסיף גבולות לכפתור */
+  cursor: pointer; /*הפרמטר הזה משנה את העכבר לסמל היד */
+  border-radius: 10px; /* הוסף קצוות עגולים*/
+  font-size: 24px; /* שינוי גודל הטקסט */
+  text-align: center;
+  display: block;
+  font-weight: 100;
+  margin-right: auto; /* מיקום מצד ימין של העיבוד */
+
+} 
+.router-outlet:hover{
+  color:black;
+  font-weight: 400;
+}
+
+/* עיצוב לקישור */
+a {
+display: inline-block;
+padding: 10px 20px;
+text-decoration: none;
+border-radius: 5px;
+background-color: #007bff;
+color: #fff;
+transition: background-color 0.3s ease-out;
+margin: 50px auto;  /* הזזת הקישור לאמצע */
+width: fit-content; /* רוחב על פי התוכן */
+}
+a:hover {
+background-color: #0056b3;
+}
+

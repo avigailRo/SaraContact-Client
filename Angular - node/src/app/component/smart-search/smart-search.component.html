@@ -1,0 +1,20 @@
+<p>smart-search works!</p>
+<!-- <form id="search-form" action="חיפוש.html">
+    <input type="text" id="search-input" placeholder="חפש באתר..." />
+    <button type="submit">חפש</button>
+  </form>
+  <div id="search-results">
+    כאן יוצגו תוצאות החיפוש
+   </div>  -->
+  <div>
+    <form (ngSubmit)="onSubmit()">
+      <input type="text" id="search-input" [(ngModel)]="searchTerm" placeholder="חפש באתר..." />
+      <button type="submit">חפש</button>
+    </form>
+  </div>
+
+
+<p-menubar [model]="items">
+    <input type="text" pInputText placeholder="Search">
+    <button pButton label="Logout" icon="fa fa-sign-out" class="custom-search-button"></button>
+</p-menubar>

@@ -1,0 +1,36 @@
+<br>
+<div *ngFor="let category of categories" class="field-checkbox" style="display: inline-block;">
+    <br>
+<!-- כפתור להצגת הערים ובחירתם -->
+    <p-radioButton [inputId]="category.key" name="city" [value]="category" [(ngModel)]="selectedCategory"
+        (click)="showCourse(category.name)">
+    </p-radioButton>
+    <label [for]="category.key" class="ml-2"> {{category.name }} </label>
+<!-- כפתור לפתיחת חלון חוסם -->
+    <p-dialog header={{category.name}} [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }"
+        [draggable]="false" [resizable]="false" *ngIf="visible && formType === category.name">
+
+<!-- טבלה להצגת החוגים -->
+        <!-- <p-table [value]="products" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="caption"> Header </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>שם החוג</th>
+                    <th>ראשון</th>
+                    <th>שני</th>
+                    <th>שלישי</th>
+                    <th>רביעי</th>
+                    <th>חמישי</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+                <tr>
+                    <td>{{ courses.code }}</td>
+                    <td>{{ courses.name }}</td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary"> Footer </ng-template>
+        </p-table>
+
+    </p-dialog>
+</div> -->
